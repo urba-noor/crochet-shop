@@ -1,0 +1,957 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noor's Little Crochet Shop 🧶</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: "Comic Sans MS", cursive;
+            background: #fffaf5;
+            color: #514343;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #f8dfe8;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px dashed #514343;
+        }
+
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #bd6583;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #514343;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+
+        nav a:hover {
+            color: #bd6583;
+        }
+
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 650px;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: #fff1f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            color: #bd6583;
+            margin-bottom: 20px;
+        }
+
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background: #bd6583;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 2px solid #514343;
+            box-shadow: 5px 5px 0 #514343;
+        }
+
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .crochet-art {
+            font-size: 180px;
+            transform: rotate(5deg);
+        }
+
+
+        .doodle {
+            position: absolute;
+            font-size: 35px;
+        }
+
+
+        .doodle.one {
+            top: 70px;
+            right: 8%;
+        }
+
+
+        .doodle.two {
+            bottom: 80px;
+            left: 5%;
+        }
+
+
+        .doodle.three {
+            top: 180px;
+            left: 45%;
+        }
+
+
+
+        /* ================= GENERAL SECTIONS ================= */
+
+        section {
+            padding: 90px 10%;
+        }
+
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: #bd6583;
+            margin-bottom: 15px;
+        }
+
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+
+        .product {
+            background: white;
+            border: 2px solid #514343;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 6px 6px 0 #514343;
+            transition: 0.3s;
+        }
+
+
+        .product:hover {
+            transform: translateY(-8px) rotate(-1deg);
+        }
+
+
+        .product-picture {
+            background: #fce6ed;
+            height: 180px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 90px;
+            margin-bottom: 20px;
+        }
+
+
+        .product h3 {
+            color: #bd6583;
+            font-size: 23px;
+        }
+
+
+        .product p {
+            line-height: 1.6;
+        }
+
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #f6e9df;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+
+        .about-picture {
+            font-size: 150px;
+            min-width: 250px;
+            text-align: center;
+        }
+
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+
+        /* ================= WHY US ================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+            background: #fff1f5;
+            border-radius: 20px;
+            border: 2px dashed #bd6583;
+        }
+
+
+        .feature-icon {
+            font-size: 45px;
+        }
+
+
+        .feature h3 {
+            color: #bd6583;
+        }
+
+
+
+        /* ================= CUSTOM ORDERS ================= */
+
+        .custom {
+            background: #fff1f5;
+            text-align: center;
+        }
+
+
+        .custom-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border: 2px solid #514343;
+            border-radius: 25px;
+            box-shadow: 7px 7px 0 #514343;
+        }
+
+
+        .custom-box p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+
+        /* ================= REVIEWS ================= */
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .review {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #514343;
+            box-shadow: 5px 5px 0 #514343;
+        }
+
+
+        .stars {
+            font-size: 20px;
+        }
+
+
+        .review p {
+            line-height: 1.6;
+        }
+
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #f6e9df;
+            text-align: center;
+        }
+
+
+        .contact p {
+            font-size: 18px;
+        }
+
+
+        .contact-box {
+            margin-top: 30px;
+            font-size: 25px;
+        }
+
+
+        .contact-box span {
+            margin: 0 12px;
+        }
+
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #bd6583;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+
+        footer p {
+            margin: 5px;
+        }
+
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+
+            nav a {
+                margin: 8px;
+            }
+
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🧶 Noor's Little Crochet Shop
+        </div>
+
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#shop">Shop</a>
+
+            <a href="#about">About</a>
+
+            <a href="#custom">Custom</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="doodle one">✿</div>
+
+        <div class="doodle two">♡</div>
+
+        <div class="doodle three">✦</div>
+
+
+        <div class="hero-text">
+
+            <p>♡ handmade with lots of love ♡</p>
+
+            <h1>
+                Little things,
+                <br>
+                made lovely.
+            </h1>
+
+
+            <p>
+                Welcome to my tiny crochet corner!
+                Everything here is handmade stitch by stitch,
+                with soft yarn, patience and a whole lot of love. 🧶
+            </p>
+
+
+            <a href="#shop" class="button">
+                Explore the shop ✿
+            </a>
+
+        </div>
+
+
+        <div class="crochet-art">
+            🧶🧸
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SHOP ================= -->
+
+    <section id="shop">
+
+        <h2 class="section-title">
+            Little Crochet Things ♡
+        </h2>
+
+
+        <p class="section-subtitle">
+            Tiny handmade treasures waiting for a new home.
+        </p>
+
+
+        <div class="products">
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    🧸
+                </div>
+
+                <h3>Mini Teddy</h3>
+
+                <p>
+                    A tiny cuddly friend made with soft yarn.
+                    Perfect for your desk, shelf or bedside table.
+                </p>
+
+                <div class="price">
+                    Rs. 1,200
+                </div>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    🌷
+                </div>
+
+                <h3>Crochet Flower</h3>
+
+                <p>
+                    A forever flower that never needs watering.
+                    A sweet little gift for someone special.
+                </p>
+
+                <div class="price">
+                    Rs. 700
+                </div>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    🐰
+                </div>
+
+                <h3>Little Bunny</h3>
+
+                <p>
+                    A soft handmade bunny with the cutest
+                    little face and floppy ears.
+                </p>
+
+                <div class="price">
+                    Rs. 1,500
+                </div>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    👜
+                </div>
+
+                <h3>Mini Crochet Bag</h3>
+
+                <p>
+                    A cute little bag for your everyday tiny
+                    essentials and your cutest outfits.
+                </p>
+
+                <div class="price">
+                    Rs. 2,000
+                </div>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    🧦
+                </div>
+
+                <h3>Cozy Socks</h3>
+
+                <p>
+                    Warm handmade crochet socks for cozy
+                    evenings, movie nights and rainy days.
+                </p>
+
+                <div class="price">
+                    Rs. 1,000
+                </div>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <div class="product-picture">
+                    🎀
+                </div>
+
+                <h3>Hair Bow</h3>
+
+                <p>
+                    A tiny crochet bow to make your outfit
+                    just a little more adorable.
+                </p>
+
+                <div class="price">
+                    Rs. 500
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+
+        <div class="about-picture">
+            🧶🪡
+        </div>
+
+
+        <div class="about-text">
+
+            <h2 class="section-title">
+                A little about my shop ♡
+            </h2>
+
+
+            <p>
+                Noor's Little Crochet Shop started with a simple
+                love for yarn and making tiny things with my own hands.
+            </p>
+
+
+            <p>
+                Every piece is handmade rather than mass-produced,
+                which means each one has its own little personality.
+            </p>
+
+
+            <p>
+                From tiny flowers to cuddly little creatures,
+                my goal is to make things that bring a little
+                happiness whenever you see them.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            Why choose handmade? ✿
+        </h2>
+
+
+        <p class="section-subtitle">
+            Because little details matter.
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🧶
+                </div>
+
+                <h3>Handmade</h3>
+
+                <p>
+                    Every piece is carefully crocheted by hand.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💕
+                </div>
+
+                <h3>Made with love</h3>
+
+                <p>
+                    Each stitch gets a little extra love.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌷
+                </div>
+
+                <h3>Unique</h3>
+
+                <p>
+                    Your handmade piece is special and personal.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎁
+                </div>
+
+                <h3>Giftable</h3>
+
+                <p>
+                    Perfect for birthdays, friends and little surprises.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CUSTOM ORDERS ================= -->
+
+    <section class="custom" id="custom">
+
+        <h2 class="section-title">
+            Want something custom? 🎀
+        </h2>
+
+
+        <div class="custom-box">
+
+            <p>
+                Have an idea that isn't in the shop?
+                Tell me what you're imagining!
+            </p>
+
+
+            <p>
+                You can choose the colour, size, style
+                and even request your own little crochet character.
+            </p>
+
+
+            <p>
+                ✦ Your idea + my yarn + lots of stitches = ✦
+                something made especially for you.
+            </p>
+
+
+            <a href="#contact" class="button">
+                Request a custom piece ♡
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= REVIEWS ================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            Little love notes 💌
+        </h2>
+
+
+        <p class="section-subtitle">
+            What our happy customers say.
+        </p>
+
+
+        <div class="reviews">
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "The little bunny is SO adorable!
+                    You can tell how much care went into making it."
+                </p>
+
+                <strong>
+                    — A happy customer ♡
+                </strong>
+
+            </div>
+
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "I ordered the flower as a gift and
+                    my friend absolutely loved it!"
+                </p>
+
+                <strong>
+                    — Another happy customer 🌷
+                </strong>
+
+            </div>
+
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "Everything was so cute and carefully made.
+                    Definitely ordering again!"
+                </p>
+
+                <strong>
+                    — Crochet lover 🧶
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Let's make something cute ♡
+        </h2>
+
+
+        <p>
+            Have a question, want to place an order,
+            or just want to say hi?
+        </p>
+
+
+        <div class="contact-box">
+
+            <span>📧</span>
+
+            <span>📱</span>
+
+            <span>💌</span>
+
+        </div>
+
+
+        <p>
+            Email: hello@noorscrochet.com
+        </p>
+
+
+        <p>
+            Made with 🧶 + ♡ by Noor
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            🧶 Noor's Little Crochet Shop
+        </p>
+
+        <p>
+            Handmade with love, one stitch at a time ♡
+        </p>
+
+        <p>
+            © 2026 Noor's Little Crochet Shop
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
